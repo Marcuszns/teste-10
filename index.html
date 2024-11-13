@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReciclaAqui - Pontos de Coleta de Recicláveis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="logo">Recicla<span>Aqui</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#pontos-coleta">Pontos de Coleta</a></li>
+                <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#dicas-reciclagem">Dicas de Reciclagem</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Seção Principal -->
+    <section id="home">
+        <h1>Transforme o Futuro, Recicle Hoje!</h1>
+        <p>Encontre um ponto de coleta de materiais recicláveis próximo a você.</p>
+        <button onclick="window.location.href='#pontos-coleta'">Encontre um Ponto de Coleta</button>
+    </section>
+
+    <!-- Mapa Interativo -->
+    <section id="pontos-coleta">
+        <h2>Pontos de Coleta Próximos</h2>
+        <div id="map" class="map-container"></div>
+        <div class="filters">
+            <label>Filtrar por tipo de material:</label>
+            <select id="filter-type">
+                <option value="all">Todos</option>
+                <option value="plastic">Plástico</option>
+                <option value="paper">Papel</option>
+                <option value="glass">Vidro</option>
+                <option value="metal">Metal</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- Seção de Instruções -->
+    <section id="como-funciona">
+        <h2>Como Funciona</h2>
+        <p>Separe corretamente seus materiais e leve-os aos pontos de coleta para reciclagem.</p>
+        <ul>
+            <li><strong>Plástico:</strong> Garrafas PET, sacolas, embalagens.</li>
+            <li><strong>Papel:</strong> Jornais, revistas, caixas de papelão.</li>
+            <li><strong>Vidro:</strong> Garrafas, potes de vidro.</li>
+            <li><strong>Metal:</strong> Latas de alumínio, sucata de ferro.</li>
+        </ul>
+    </section>
+
+    <!-- Dicas e Informações -->
+    <section id="dicas-reciclagem">
+        <h2>Dicas de Reciclagem</h2>
+        <div class="tips">
+            <div class="tip">
+                <h3>Reduza o Uso de Plástico</h3>
+                <p>Opte por produtos reutilizáveis para reduzir o consumo de plástico.</p>
+            </div>
+            <div class="tip">
+                <h3>Reutilize Materiais</h3>
+                <p>Antes de descartar, veja se o material pode ser reutilizado de alguma forma.</p>
+            </div>
+            <div class="tip">
+                <h3>Separe Corretamente</h3>
+                <p>Separe os recicláveis dos resíduos orgânicos para facilitar a reciclagem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato">
+        <h2>Contato</h2>
+        <form>
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Rodapé -->
+    <footer>
+        <p>&copy; 2024 ReciclaAqui - Todos os direitos reservados</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
