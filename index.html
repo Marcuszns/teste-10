@@ -18,6 +18,7 @@
                 <li><a href="#pontos-coleta">Pontos de Coleta</a></li>
                 <li><a href="#como-funciona">Como Funciona</a></li>
                 <li><a href="#dicas-reciclagem">Dicas de Reciclagem</a></li>
+                <li><a href="#cadastro-pontos">Cadastro de Ponto</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
@@ -46,52 +47,55 @@
         </div>
     </section>
 
-    <!-- Seção de Instruções -->
+    <!-- Como Funciona -->
     <section id="como-funciona">
         <h2>Como Funciona</h2>
-        <p>Separe corretamente seus materiais e leve-os aos pontos de coleta para reciclagem.</p>
+        <p>O ReciclaAqui facilita a localização de pontos de coleta de materiais recicláveis na sua cidade. Ao utilizar o mapa interativo, você pode encontrar facilmente os pontos mais próximos para a destinação correta de resíduos, contribuindo para a preservação do meio ambiente.</p>
+    </section>
+
+    <!-- Dicas de Reciclagem -->
+    <section id="dicas-reciclagem">
+        <h2>Dicas de Reciclagem</h2>
         <ul>
-            <li><strong>Plástico:</strong> Garrafas PET, sacolas, embalagens.</li>
-            <li><strong>Papel:</strong> Jornais, revistas, caixas de papelão.</li>
-            <li><strong>Vidro:</strong> Garrafas, potes de vidro.</li>
-            <li><strong>Metal:</strong> Latas de alumínio, sucata de ferro.</li>
+            <li><strong>Separe corretamente:</strong> Organize seus materiais recicláveis por tipo (papel, plástico, vidro e metal) para facilitar o processo de coleta e destinação.</li>
+            <li><strong>Lave os materiais:</strong> Antes de descartar embalagens, lave-as para evitar contaminação e odores.</li>
+            <li><strong>Evite misturar:</strong> Não misture materiais recicláveis com lixo orgânico, isso dificulta a reciclagem.</li>
+            <li><strong>Verifique os símbolos:</strong> Fique atento aos símbolos de reciclagem nas embalagens para garantir que o material seja reciclado corretamente.</li>
         </ul>
     </section>
 
-    <!-- Dicas e Informações -->
-    <section id="dicas-reciclagem">
-        <h2>Dicas de Reciclagem</h2>
-        <div class="tips">
-            <div class="tip">
-                <h3>Reduza o Uso de Plástico</h3>
-                <p>Opte por produtos reutilizáveis para reduzir o consumo de plástico.</p>
-            </div>
-            <div class="tip">
-                <h3>Reutilize Materiais</h3>
-                <p>Antes de descartar, veja se o material pode ser reutilizado de alguma forma.</p>
-            </div>
-            <div class="tip">
-                <h3>Separe Corretamente</h3>
-                <p>Separe os recicláveis dos resíduos orgânicos para facilitar a reciclagem.</p>
-            </div>
-        </div>
+    <!-- Cadastro de Pontos -->
+    <section id="cadastro-pontos">
+        <h2>Cadastro de Pontos de Coleta</h2>
+        <form id="formCadastro">
+            <label for="descricao">Descrição:</label>
+            <input type="text" id="descricao" name="descricao" required placeholder="Ex: Coleta de Plástico - Rod. BA 262, km 08">
+            
+            <label for="tipo">Tipo de Material:</label>
+            <select id="tipo" name="tipo">
+                <option value="plastic">Plástico</option>
+                <option value="paper">Papel</option>
+                <option value="glass">Vidro</option>
+                <option value="metal">Metal</option>
+            </select>
+            
+            <label for="latitude">Latitude:</label>
+            <input type="number" id="latitude" name="latitude" required placeholder="Ex: -14.8606">
+            
+            <label for="longitude">Longitude:</label>
+            <input type="number" id="longitude" name="longitude" required placeholder="Ex: -40.8382">
+            
+            <button type="submit">Cadastrar Ponto</button>
+        </form>
+        <div id="feedbackMessage"></div>
     </section>
 
     <!-- Contato -->
     <section id="contato">
         <h2>Contato</h2>
-        <form>
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-            
-            <button type="submit">Enviar</button>
-        </form>
+        <p>Se você tiver dúvidas, sugestões ou quiser se tornar um ponto de coleta parceiro, entre em contato conosco:</p>
+        <p>Email: <a href="mailto:contato@reciclaaqui.com.br">contato@reciclaaqui.com.br</a></p>
+        <p>Telefone: <a href="tel:+5535999999999">(35) 99999-9999</a></p>
     </section>
 
     <!-- Rodapé -->
@@ -99,7 +103,6 @@
         <p>&copy; 2024 ReciclaAqui - Todos os direitos reservados</p>
     </footer>
 
-    <!-- Scripts -->
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
     <script src="script.js"></script>
 </body>

@@ -1,5 +1,5 @@
-// Inicializar o mapa centrado em uma coordenada específica
-var map = L.map('map').setView([-23.55052, -46.6333], 12); // Coordenadas de São Paulo como exemplo
+// Inicializar o mapa centrado em Vitória da Conquista
+var map = L.map('map').setView([-14.8606, -40.8382], 12); // Coordenadas de Vitória da Conquista
 
 // Adicionar a camada de mapa base do OpenStreetMap
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -8,10 +8,10 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Dados de exemplo dos pontos de coleta
 const pontosColeta = [
-    { tipo: "plastic", coords: [-23.55652, -46.6353], descricao: "Coleta de Plástico - Av. Paulista" },
-    { tipo: "paper", coords: [-23.5500, -46.6347], descricao: "Coleta de Papel - Rua Augusta" },
-    { tipo: "glass", coords: [-23.5600, -46.6200], descricao: "Coleta de Vidro - Av. Brigadeiro" },
-    { tipo: "metal", coords: [-23.5625, -46.6512], descricao: "Coleta de Metal - Praça da Sé" }
+    { tipo: "plastic", coords: [-14.8606, -40.8382], descricao: "Coleta de Plástico - Rod. BA 262, km 08" },
+    { tipo: "paper", coords: [-14.8602, -40.8315], descricao: "Coleta de Papel - Rua São Luis, Candeias" },
+    { tipo: "glass", coords: [-14.8625, -40.8348], descricao: "Coleta de Vidro - CSU, Av. Deraldo Mendes" },
+    { tipo: "metal", coords: [-14.8634, -40.8351], descricao: "Coleta de Metal - Av. Panamá, Bairro Jurema" }
 ];
 
 // Função para adicionar os pontos de coleta no mapa
@@ -35,4 +35,38 @@ document.getElementById("filter-type").addEventListener("change", function() {
         }
     });
     addPontosFiltrados(this.value);
+});
+
+// Cadastro de novo ponto de coleta
+document.getElementById("formCadastro").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Obtém os dados do formulário
+    const descricao = document.getElementById("descricao").value;
+    const tipo = document.getElementById("tipo").value;
+    const latitude = parseFloat(document.getElementById("latitude").value);
+    const longitude = parseFloat(document.getElementById("longitude").value);
+
+    // Adiciona o novo ponto de coleta no mapa
+    if (descricao && tipo && !isNaN(latitude) && !isNaN(longitude)) {
+        pontosColeta.push({ tipo, coords: [latitude, longitude], descricao });
+        
+        // Atualiza o mapa com os novos pontos
+        L.marker([latitude, longitude]).addTo(map)
+            .bindPopup(`<b>${descricao}</b><br>Tipo: ${tipo}`);
+
+        // Exibe a mensagem de sucesso
+        var feedback = document.getElementById("feedbackMessage");
+        feedback.textContent = "Ponto de Coleta cadastrado com sucesso!";
+        feedback.style.display = "block";
+        feedback.classList.remove('error');
+        feedback.classList.add('success');
+    } else {
+        // Exibe a mensagem de erro
+        var feedback = document.getElementById("feedbackMessage");
+        feedback.textContent = "Erro ao cadastrar. Verifique os dados e tente novamente.";
+        feedback.style.display = "block";
+        feedback.classList.remove('success');
+        feedback.classList.add('error');
+    }
 });

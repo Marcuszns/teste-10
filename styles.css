@@ -1,3 +1,4 @@
+/* Reset de margin e padding */
 * {
   margin: 0;
   padding: 0;
@@ -153,4 +154,45 @@ footer {
   padding: 1rem;
   background-color: #2c3e50;
   color: #fff;
+}
+
+/* Seções de conteúdo */
+section#como-funciona,
+section#dicas-reciclagem,
+section#contato {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 2rem;
+  padding: 2rem;
+}
+
+section#como-funciona p,
+section#dicas-reciclagem ul,
+section#contato p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+section#dicas-reciclagem ul {
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+/* Feedback Messages */
+#feedbackMessage {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  display: none;
+}
+
+#feedbackMessage.success {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+#feedbackMessage.error {
+  background-color: #f8d7da;
+  color: #721c24;
 }
