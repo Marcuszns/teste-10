@@ -8,10 +8,9 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 // Dados de exemplo dos pontos de coleta
 const pontosColeta = [
-    { tipo: "plastic", coords: [-14.8606, -40.8382], descricao: "Coleta de Plástico - Rod. BA 262, km 08" },
-    { tipo: "paper", coords: [-14.8602, -40.8315], descricao: "Coleta de Papel - Rua São Luis, Candeias" },
-    { tipo: "glass", coords: [-14.8625, -40.8348], descricao: "Coleta de Vidro - CSU, Av. Deraldo Mendes" },
-    { tipo: "metal", coords: [-14.8634, -40.8351], descricao: "Coleta de Metal - Av. Panamá, Bairro Jurema" }
+    { tipo: "plastic", coords: [-14.8420111,-40.9250037], descricao: "Aterro sanitario- Rod. BA 262, km 08" },
+    { tipo: "eletronic", coords: [-14.8705438,-40.8307048], descricao: "Ecoponto - Rua São Luis, Candeias" },
+    { tipo: "eletronic", coords: [-14.8630441,-40.8493186], descricao: "Ecoponto- Av. Panamá, Bairro Jurema" }
 ];
 
 // Função para adicionar os pontos de coleta no mapa
